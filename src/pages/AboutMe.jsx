@@ -104,7 +104,9 @@ export default function AboutMe() {
 
             {account && (
               <div className="mt-4 p-3 border rounded text-center">
-                <h5>{account.gameName}#{account.tagLine}</h5>
+                <h5>
+                  {account.gameName}#{account.tagLine}
+                </h5>
                 <p className="text-muted">PUUID:</p>
                 <small>{account.puuid}</small>
               </div>
@@ -113,15 +115,25 @@ export default function AboutMe() {
             {stats && (
               <div className="mt-3 p-3 border rounded text-center">
                 <h5>Player Stats (Last 10 Matches)</h5>
-                <p>Most Played Champion: <strong>{stats.mostPlayedChampion}</strong></p>
-                <p>Most Played Position: <strong>{stats.mostPlayedPosition}</strong></p>
-                <p>Average KDA: <strong>{stats.avgKDA}</strong></p>
+                <p>
+                  Most Played Champion:{" "}
+                  <strong>{stats.mostPlayedChampion}</strong>
+                </p>
+                <p>
+                  Most Played Position:{" "}
+                  <strong>{stats.mostPlayedPosition}</strong>
+                </p>
+                <p>
+                  Average KDA: <strong>{stats.avgKDA}</strong>
+                </p>
               </div>
             )}
 
             {matches.length > 0 && (
               <div className="mt-4">
-                <h5 className="text-center mb-3">Last {matches.length} Matches</h5>
+                <h5 className="text-center mb-3">
+                  Last {matches.length} Matches
+                </h5>
                 <Table striped bordered hover responsive>
                   <thead>
                     <tr>
@@ -142,6 +154,11 @@ export default function AboutMe() {
                         <td>{m.deaths}</td>
                         <td>{m.assists}</td>
                         <td>{m.win ? "✔️" : "❌"}</td>
+                        <td>
+                          {m.deaths === 0
+                            ? m.kills + m.assists // avoid division by zero
+                            : ((m.kills + m.assists) / m.deaths).toFixed(2)}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -154,4 +171,3 @@ export default function AboutMe() {
     </div>
   );
 }
-
