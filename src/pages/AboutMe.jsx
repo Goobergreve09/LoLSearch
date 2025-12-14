@@ -137,7 +137,7 @@ export default function AboutMe() {
                 <h5 className=" statStyles text-center mb-3">
                   Last {matches.length} Matches
                 </h5>
-                <Table striped bordered hover responsive>
+                <Table className="mb-5" striped bordered hover responsive>
                   <thead>
                     <tr>
                       <th>Champion</th>
