@@ -19,7 +19,7 @@ function Header() {
   return (
     <header>
       <nav className="navbar">
-        <h1 className="navbar-brand">Gregory M. Greve</h1>
+        <h1 className="navbar-brand">LoL Player Search</h1>
         {/* Hamburger icon for mobile */}
         <div className="hamburger" onClick={toggleMenu}>
           <div className="line"></div>
