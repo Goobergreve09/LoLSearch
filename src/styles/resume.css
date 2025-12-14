@@ -1,0 +1,95 @@
+/* RESUME */
+
+.resume {
+  padding-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "Manrope", sans-serif;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.checkPoint {
+  padding-right: 20px;
+  color: #52be80;
+}
+
+.checkPointScholar {
+  padding-right: 20px;
+  color: #f4d03f;
+}
+
+.resumeHeader,
+.resumeSubHeader,
+.sectionTitle,
+.summaryText,
+.jobHeader,
+.jobDescription,
+.bulletedPoint {
+  color: whitesmoke;
+}
+
+.resumeHeader {
+  border-top: 2px solid white;
+}
+.bulletedPoint {
+  margin-left: 20px;
+}
+.jobDescription {
+  font-style: italic;
+}
+.jobHeader {
+  font-weight: bold;
+}
+
+.sectionTitle {
+  border-top: 2px solid whitesmoke;
+}
+
+.jobDescription a {
+  text-decoration: none;
+  color: #3795ff;
+}
+
+.jobDescription a:hover {
+  color: var(--hover-glow-color);
+}
+
+.summaryText {
+  font-size: larger;
+}
+
+.resume h2 {
+  color: whitesmoke;
+  font-family: "Manrope", sans-serif;
+}
+
+.resume .row {
+  padding-bottom: 25px;
+}
+
+.bi.bi-download {
+  color: whitesmoke;
+  transition: color 0.2s ease;
+}
+
+.bi.bi-download:hover {
+  color: var(--hover-glow-color);
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.icon-spacing {
+  margin-right: 100px;
+}
+
+.icon-container {
+  padding-top: 50px;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}

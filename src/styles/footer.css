@@ -1,0 +1,21 @@
+/* FOOTER */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: white;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.footer a {
+  padding: 25px;
+  transition: ease 0.2s;
+}
+
+.footer a:hover {
+  color: var(--hover-glow-color) !important;
+}

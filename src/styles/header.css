@@ -1,0 +1,151 @@
+/* HEADER  */
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1rem;
+  padding-bottom: 3rem;
+}
+
+.navbar h1 {
+  color: whitesmoke;
+  font-size: 48px;
+  font-family: "Oswald", sans-serif;
+}
+
+.navbar h1:hover {
+  color: whitesmoke;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  font-family: monospace !important;
+  font-size: 32px;
+}
+
+.nav-links li {
+  padding: 0.5rem 1rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  transition: ease 0.1s;
+}
+
+.nav-links li a:hover {
+  color: var(--hover-glow-color);
+  text-shadow: 0px 0px 1px var(--hover-glow-color),
+    /* Outer glow */ 0px 0px 8px var(--hover-glow-color),
+    /* Stronger outer glow */ 0px 0px 20px var(--hover-glow-color);
+}
+
+.nav-links li a.active {
+  font-weight: bold;
+  color: var(--hover-glow-color);
+  text-shadow: 0px 0px 1px var(--hover-glow-color),
+    /* Outer glow */ 0px 0px 8px var(--hover-glow-color),
+    /* Stronger outer glow */ 0px 0px 20px var(--hover-glow-color);
+}
+
+.close-btn {
+  display: none;
+}
+
+.mobile-header-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+  }
+
+  header {
+    text-align: center;
+    padding-bottom: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 30%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1;
+    border-radius: 0;
+    transform: translateX(-100%); /* Start hidden off-screen */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+    gap: 0.25rem;
+    font-family: monospace !important;
+    font-size: 24px;
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* Slide in when open */
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: whitesmoke;
+    margin: 5px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+    display: inherit;
+  }
+
+  .close-btn:hover {
+    color: #e74c3c;
+  }
+
+  .mobile-header-image {
+    display: block;
+    max-width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Optional for rounded corners */
+
+    /* Floating effect */
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
