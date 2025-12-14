@@ -39,37 +39,37 @@ export default function AboutMe() {
         let totalAssists = 0;
 
         matchData.forEach((m) => {
-          // Count champions
           championCount[m.champion] = (championCount[m.champion] || 0) + 1;
-          // Count positions
           positionCount[m.position] = (positionCount[m.position] || 0) + 1;
-          // Sum KDA
           totalKills += m.kills;
           totalDeaths += m.deaths;
           totalAssists += m.assists;
         });
 
-        // Most used champion
         const mostPlayedChampion = Object.entries(championCount).reduce(
           (a, b) => (b[1] > a[1] ? b : a),
           ["", 0]
         )[0];
 
-        // Most used position
         const mostPlayedPosition = Object.entries(positionCount).reduce(
           (a, b) => (b[1] > a[1] ? b : a),
           ["", 0]
         )[0];
 
-        // Average KDA
         const avgKills = (totalKills / matchData.length).toFixed(1);
         const avgDeaths = (totalDeaths / matchData.length).toFixed(1);
         const avgAssists = (totalAssists / matchData.length).toFixed(1);
+
+        const totalKDA =
+          totalDeaths === 0
+            ? totalKills + totalAssists
+            : ((totalKills + totalAssists) / totalDeaths).toFixed(2);
 
         setStats({
           mostPlayedChampion,
           mostPlayedPosition,
           avgKDA: `${avgKills} / ${avgDeaths} / ${avgAssists}`,
+          totalKDA,
         });
       }
     } catch (err) {
@@ -126,6 +126,9 @@ export default function AboutMe() {
                 <p>
                   Average KDA: <strong>{stats.avgKDA}</strong>
                 </p>
+                <p>
+                  Total KDA (All 10 Matches): <strong>{stats.totalKDA}</strong>
+                </p>
               </div>
             )}
 
@@ -143,6 +146,7 @@ export default function AboutMe() {
                       <th>D</th>
                       <th>A</th>
                       <th>Win</th>
+                      <th>Total KDA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -156,7 +160,7 @@ export default function AboutMe() {
                         <td>{m.win ? "✔️" : "❌"}</td>
                         <td>
                           {m.deaths === 0
-                            ? m.kills + m.assists // avoid division by zero
+                            ? m.kills + m.assists
                             : ((m.kills + m.assists) / m.deaths).toFixed(2)}
                         </td>
                       </tr>
