@@ -82,7 +82,7 @@ export default function AboutMe() {
   return (
     <div>
       <Header />
-      <Container className="mt-4">
+      <Container className="mt-4 mb-5">
         <Row className="justify-content-center">
           <Col md={8}>
             <Form.Control
