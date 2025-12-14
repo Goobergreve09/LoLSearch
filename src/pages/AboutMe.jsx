@@ -104,17 +104,17 @@ export default function AboutMe() {
 
             {account && (
               <div className="mt-4 p-3 border rounded text-center">
-                <h5>
+                <h5 className="statStyles">
                   {account.gameName}#{account.tagLine}
                 </h5>
-                <p className="text-muted">PUUID:</p>
+                <p className="statStyles">PUUID:</p>
                 <small>{account.puuid}</small>
               </div>
             )}
 
             {stats && (
               <div className="mt-3 p-3 border rounded text-center">
-                <h5>Player Stats (Last 10 Matches)</h5>
+                <h5 className="statStyles">Player Stats (Last 10 Matches)</h5>
                 <p className="statStyles">
                   Most Played Champion:{" "}
                   <strong>{stats.mostPlayedChampion}</strong>
@@ -134,7 +134,7 @@ export default function AboutMe() {
 
             {matches.length > 0 && (
               <div className="mt-4">
-                <h5 className="text-center mb-3">
+                <h5 className=" statStyles text-center mb-3">
                   Last {matches.length} Matches
                 </h5>
                 <Table striped bordered hover responsive>
