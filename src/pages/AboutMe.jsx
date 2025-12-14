@@ -115,18 +115,18 @@ export default function AboutMe() {
             {stats && (
               <div className="mt-3 p-3 border rounded text-center">
                 <h5>Player Stats (Last 10 Matches)</h5>
-                <p>
+                <p className="statStyles">
                   Most Played Champion:{" "}
                   <strong>{stats.mostPlayedChampion}</strong>
                 </p>
-                <p>
+                <p className="statStyles">
                   Most Played Position:{" "}
                   <strong>{stats.mostPlayedPosition}</strong>
                 </p>
-                <p>
+                <p className="statStyles">
                   Average KDA: <strong>{stats.avgKDA}</strong>
                 </p>
-                <p>
+                <p className="statStyles">
                   Total KDA (All 10 Matches): <strong>{stats.totalKDA}</strong>
                 </p>
               </div>
